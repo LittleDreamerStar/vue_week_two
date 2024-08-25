@@ -162,9 +162,9 @@ const errorShow = (title, message) => {
 const apiUri = 'https://todolist-api.hexschool.io'
 const users = `${apiUri}/users`
 const todos = `${apiUri}/todos`
-const sing_up = `${users}/sign_up`
-const sing_out = `${users}/sign_out`
-const sing_in = `${users}/sign_in`
+const sign_up = `${users}/sign_up`
+const sign_out = `${users}/sign_out`
+const sign_in = `${users}/sign_in`
 const check_out = `${users}/checkout`
 
 const singUpRef = ref(false)
@@ -189,7 +189,7 @@ const editTodo = ref({})
 
 const singUpAdd = async () => {
   try {
-    const response = await axios.post(sing_up, {
+    const response = await axios.post(sign_up, {
       ...addNewUser.value
     })
     show(
@@ -208,7 +208,7 @@ const singUpAdd = async () => {
 
 const singInButton = async () => {
   try {
-    const response = await axios.post(sing_in, {
+    const response = await axios.post(sign_in, {
       ...singIn.value
     })
 
@@ -268,7 +268,7 @@ const checkToken = async () => {
 const singOutButton = async () => {
   try {
     const response = await axios.post(
-      sing_out,
+      sign_out,
       {},
       {
         headers: {
